@@ -1,0 +1,137 @@
+.page-video {
+    .main-content {
+    	padding: 30px 0;
+    }
+    .container {
+
+    }
+    .heading {
+    	width: 235px;
+    	height: 48px;
+    	margin: 0 auto;
+    	text-indent: -9999px;
+    	background: url('../images/video/heading.png') no-repeat;
+    }
+    .content {
+    	width: 100%;
+    	max-width: 530px;
+    	padding: 30px 40px;
+    	margin: 20px auto 0;
+    	background-color: #fff;
+    	@include border-radius ( 3px, 3px, 3px, 3px );
+    }
+    .content_title {
+    	color: #003876;
+    	font-size: 18px;
+    	font-weight: bold;
+    	text-align: center;
+    	font-family: $font-uvn;
+    	text-transform: uppercase;
+    }
+    .form {
+    }
+	.form_title {
+		color: #003876;
+    	font-size: 18px;
+		margin-top: 45px;
+    	text-align: center;
+    	font-family: $font-uvn;
+	}
+    .form_field {
+    	margin-top: 10px;
+    	position: relative;
+    	background-color: #fff;
+    	border: 1px solid #e4e4e4;
+    	&.type-big {
+    		padding: 15px 0;
+
+    		.button {
+    			margin-top: 20px;
+    		}
+    	}
+
+    	.button {
+    		float: right;
+    	}
+    }
+    .form_action {
+    	margin-top: 35px;
+    	text-align: center;
+
+    	.button {
+    		float: none;
+    		display: inline-block;
+    	}
+    }
+    .video_info {
+    	.wrap-thumbnail {
+    		float: left;
+    		width: 30%;
+    	}
+    	.wrap-info {
+    		float: left;
+    		width: 70%;
+
+    		.process-bar {
+    			width: 100%;
+    			height: 16px;
+    			overflow: hidden;
+    			background-color: #f2f2f2;
+    			@include border-radius ( 3px, 3px, 3px, 3px );
+
+    			.bar {
+    				height: 100%;
+    				display: block;
+    				background-color: #0093e7;
+    			}
+    		}
+    		.form_title {
+    			margin-top: 20px;
+    			text-align: left;
+    		}
+    	}
+    }
+    .list-thumbnail {
+    	margin: 10px -5px 0;
+    	padding: 0;
+    	list-style: none;
+
+    	li {
+    		float: left;
+    		padding: 0 5px;
+    		width: 33.333333%;
+
+    		.wrap-img {
+    			margin: 0 auto;
+    			max-width: 100px;
+    			overflow: hidden;
+    			position: relative;
+    			cursor: pointer;
+    			@include border-radius ( 3px, 3px, 3px, 3px );
+    			&:hover {
+    				span {
+    					display: block;
+    				}
+    			}
+
+    			span {
+    				width: 100%;
+    				height: 100%;
+    				background-color: rgba( 0, 56, 118, 0.8 );
+    				text-align: center;
+    				line-height: normal;
+    				color: #fff;
+    				padding: 10px 0 0;
+    				@include ab( 0, 0, n, n );
+    				display: none;
+    			}
+    		}
+    	}
+    }
+}
+.noted {
+	color: #0093e7;
+	font-size: 14px;
+	margin: 10px 0 0;
+	font-style: italic;
+}

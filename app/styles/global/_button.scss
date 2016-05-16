@@ -1,0 +1,27 @@
+/*
+** BUTTONS
+** Please use btn- as your CSS class prefix
+*/
+.button {
+    text-decoration: none;
+    display: block;
+    border: none;
+}
+.button--upload {
+	color: #fff;
+	width: 135px;
+	height: 38px;
+	font-size: 14px;
+	line-height: 35px;
+	text-align: center;
+	background: url('../images/button/button--upload.png') no-repeat;
+}
+.button--send-now {
+	color: #fff;
+	width: 135px;
+	height: 38px;
+	font-size: 14px;
+	line-height: 35px;
+	text-align: center;
+	background: url('../images/button/button--send-now.png') no-repeat;
+}
