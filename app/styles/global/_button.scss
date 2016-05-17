@@ -8,12 +8,14 @@
     border: none;
 }
 .button--upload {
-	color: #fff;
-	width: 135px;
-	height: 38px;
-	font-size: 14px;
-	line-height: 35px;
+	width: 174px;
+	height: 51px;
+	color: #003876;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 46px;
 	text-align: center;
+	text-transform: uppercase;
 	background: url('../images/button/button--upload.png') no-repeat;
 }
 .button--send-now {
@@ -24,4 +26,28 @@
 	line-height: 35px;
 	text-align: center;
 	background: url('../images/button/button--send-now.png') no-repeat;
+}
+.button--facebook {
+	border: 2px solid #fff;
+	background-color: #4864a0;
+	color: #fff;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 10px 0;
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+	@include border-radius( 5px, 5px, 5px, 5px );
+}
+.button--gmail {
+	border: 2px solid #fff;
+	background-color: #ec0159;
+	color: #fff;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 10px 0;
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+	@include border-radius( 5px, 5px, 5px, 5px );
 }

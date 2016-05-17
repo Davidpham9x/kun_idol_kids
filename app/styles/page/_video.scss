@@ -2,9 +2,7 @@
     .main-content {
     	padding: 30px 0;
     }
-    .container {
-
-    }
+    /* .container {} */
     .heading {
     	width: 235px;
     	height: 48px;
@@ -14,49 +12,96 @@
     }
     .content {
     	width: 100%;
-    	max-width: 530px;
-    	padding: 30px 40px;
-    	margin: 20px auto 0;
-    	background-color: #fff;
+        max-width: 730px;
+        padding: 20px 40px;
+        margin: 30px auto 0;
+        background-color: #fff;
+        z-index: 2;
+        position: relative;
     	@include border-radius ( 3px, 3px, 3px, 3px );
     }
     .content_title {
     	color: #003876;
     	font-size: 18px;
     	font-weight: bold;
-    	text-align: center;
+        margin-bottom: 25px;
+        line-height: normal;
+    	/* text-align: center; */
     	font-family: $font-uvn;
     	text-transform: uppercase;
     }
-    .form {
+    .step {
+        position: relative;
+        &:before {
+            content: '';
+            width: 26px;
+            height: 30px;
+            background: url('../images/icons/icon-step.png') no-repeat;
+            @include ab( 0, -40px, n, n );
+        }
+        &.step-1 {
+            .row {
+                .form_field {
+                    width: 65%;
+                    float: left;
+                    padding-left: 20px;
+                    &:first-child {
+                        width: 35%;
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+        &.step-2 {
+            .row {
+                .form_field {
+                    width: 49%;
+                    float: right;
+                    &:first-child {
+                        width: 49%;
+                        float: left;
+                    }
+                }
+            }
+        }
     }
-	.form_title {
+    .form {
+        padding: 0 0 55px 25px;
+    }
+	/* .form_title {
 		color: #003876;
     	font-size: 18px;
 		margin-top: 45px;
     	text-align: center;
     	font-family: $font-uvn;
-	}
+	} */
     .form_field {
-    	margin-top: 10px;
-    	position: relative;
-    	background-color: #fff;
-    	border: 1px solid #e4e4e4;
+        position: relative;
+    	padding-bottom: 15px;
+    	/* background-color: #fff;
+    	border: 1px solid #e4e4e4; */
     	&.type-big {
     		padding: 15px 0;
+            background-color: #fff;
+            border: 1px solid #e4e4e4;
 
     		.button {
     			margin-top: 20px;
     		}
     	}
 
-    	.button {
+    	/* .button {
     		float: right;
-    	}
+    	} */
+        label {
+            color: #003876;
+            font-size: 18px;
+            line-height: 21px;
+            font-family: $font-uvn;
+        }
     }
     .form_action {
-    	margin-top: 35px;
-    	text-align: center;
+    	margin-top: 30px;
 
     	.button {
     		float: none;
@@ -72,25 +117,26 @@
     		float: left;
     		width: 70%;
 
-    		.process-bar {
-    			width: 100%;
-    			height: 16px;
-    			overflow: hidden;
-    			background-color: #f2f2f2;
-    			@include border-radius ( 3px, 3px, 3px, 3px );
-
-    			.bar {
-    				height: 100%;
-    				display: block;
-    				background-color: #0093e7;
-    			}
-    		}
-    		.form_title {
-    			margin-top: 20px;
-    			text-align: left;
-    		}
-    	}
+            .form_title {
+                margin-top: 20px;
+                text-align: left;
+            }
+        }
     }
+	.process-bar {
+		width: 100%;
+		height: 16px;
+        overflow: hidden;
+        margin-top: 15px;
+        background-color: #f2f2f2;
+		@include border-radius ( 3px, 3px, 3px, 3px );
+
+		.bar {
+			height: 100%;
+			display: block;
+			background-color: #0093e7;
+		}
+	}
     .list-thumbnail {
     	margin: 10px -5px 0;
     	padding: 0;
@@ -134,4 +180,23 @@
 	font-size: 14px;
 	margin: 10px 0 0;
 	font-style: italic;
+}
+.wrap-heading {
+    position: relative;
+    z-index: 1;
+    &:before {
+        content: '';
+        background: url('../images/global/bg-heading-top.png') bottom center no-repeat;
+        width: 952px;
+        height: 118px;
+        margin: 0 auto;
+        @include ab( n, 0, -115px, n );
+    }
+}
+.heading-top {
+    background: url('../images/global/heading-top.png') no-repeat;
+    width: 237px;
+    height: 79px;
+    margin-left: 20%;
+    text-indent: -99999px;
 }

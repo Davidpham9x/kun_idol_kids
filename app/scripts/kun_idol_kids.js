@@ -27,7 +27,7 @@ var isMobile = {
         init: function() { //initialization code goes here
             $.support.cors = true;
             this.initFormElements();
-            
+            this.initModal( '#modal--signin' );
         },
 
         initFormElements: function() {
@@ -78,6 +78,19 @@ var isMobile = {
 
             $(document).on('change', '.select-wrapper select', function() {
                 $(this).prev('span').replaceWith('<span>' + $(this).find('option:selected').text() + '</span>');
+            });
+        },
+
+        initModal: function ( id ) {
+            $.magnificPopup.open({
+                items: {
+                    src: id,
+                    type: 'inline'
+                }
+            });
+
+            $( id ).find('.btn-close').off('click').on('click', function () {
+                $.magnificPopup.close();
             });
         }
     };
