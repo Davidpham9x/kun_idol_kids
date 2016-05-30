@@ -6,17 +6,26 @@
     text-decoration: none;
     display: block;
     border: none;
+    position: relative;
 }
-.button--upload {
-	width: 174px;
-	height: 51px;
-	color: #003876;
+.button--submit {
+	width: 239px;
+	height: 66px;
+	color: #fff;
 	font-size: 16px;
 	font-weight: bold;
-	line-height: 46px;
+	line-height: 66px;
 	text-align: center;
-	text-transform: uppercase;
-	background: url('../images/button/button--upload.png') no-repeat;
+    padding-left: 20px;
+    text-transform: uppercase;
+	background: url('../images/modal/btn-submit.png') no-repeat;
+
+    .icon {
+        background: url('../images/icons/icon-submit-video.png') no-repeat;
+        width: 44px;
+        height: 45px;
+        @include ab ( 10px, 15px, n, n );
+    }
 }
 .button--send-now {
 	color: #fff;
@@ -28,26 +37,32 @@
 	background: url('../images/button/button--send-now.png') no-repeat;
 }
 .button--facebook {
-	border: 2px solid #fff;
-	background-color: #4864a0;
-	color: #fff;
-	text-transform: uppercase;
-	display: inline-block;
-	padding: 10px 0;
-	width: 100%;
-	text-align: center;
-	font-size: 14px;
-	@include border-radius( 5px, 5px, 5px, 5px );
+	background: url('../images/modal/btn-facebook.png') center center no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    max-width: 253px;
+    height: 92px;
+    padding: 22px 20px 22px 65px;
+
+    .icon {
+    	background: url('../images/icons/facebook.png') no-repeat;
+    	width: 48px;
+    	height: 50px;
+    	@include ab ( 20px, 30px, n, n );
+    }
 }
 .button--gmail {
-	border: 2px solid #fff;
-	background-color: #ec0159;
-	color: #fff;
-	text-transform: uppercase;
-	display: inline-block;
-	padding: 10px 0;
-	width: 100%;
-	text-align: center;
-	font-size: 14px;
-	@include border-radius( 5px, 5px, 5px, 5px );
+	background: url('../images/modal/btn-google.png') center center no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    max-width: 234px;
+    height: 95px;
+    padding: 22px 20px 22px 65px;
+
+    .icon {
+    	background: url('../images/icons/gmail.png') no-repeat;
+    	width: 48px;
+    	height: 50px;
+    	@include ab ( 20px, 30px, n, n );
+    }
 }

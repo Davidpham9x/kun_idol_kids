@@ -27,7 +27,7 @@ var isMobile = {
         init: function() { //initialization code goes here
             $.support.cors = true;
             this.initFormElements();
-            this.initModal( '#modal--signin' );
+            /*this.initModal( '#modal--about-us' );*/
         },
 
         initFormElements: function() {
@@ -86,7 +86,9 @@ var isMobile = {
                 items: {
                     src: id,
                     type: 'inline'
-                }
+                },
+                closeOnBgClick: false,
+                enableEscapeKey: false
             });
 
             $( id ).find('.btn-close').off('click').on('click', function () {

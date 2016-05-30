@@ -1,7 +1,134 @@
 .page-home {
+	background: url('../images/landing/background-landing.jpg') center center no-repeat;
+    background-size: 100% 100%;
+
     .main-content {
-    	padding: 40px;
-        font-size: 30px;
-        line-height: normal;
+    	margin: 0 auto;
+    	max-width: 960px;
+    	min-height: 630px;
+
+        .contest_info {
+        	z-index: 3;
+        	width: 50%;
+        	float: left;
+        	position: relative;
+
+        	.slogan {
+        		background: url('../images/landing/slogan.png') center center no-repeat;
+		        background-size: 100% 100%;
+		        width: 100%;
+		        height: 188px;
+		        max-width: 415px;
+		        text-indent: -9999px;
+		        margin: 50px 0 0 60px;
+        	}
+        	.prize {
+        		margin: 0 auto;
+        		max-width: 460px;
+        		text-align: center;
+
+        		p {
+        			color: #363636;
+        			font-size: 14px;
+        			font-weight: bold;
+        			line-height: normal;
+        			font-family: $font-sfu;
+
+        			strong {
+        				display: block;
+        				color: #0045ac;
+        				text-transform: uppercase;
+        			}
+        		}
+        		img {
+        			margin-left: -100px;
+        		}
+        	}
+        	.prize_text {
+        		background: url('../images/landing/prize-text.png') center center no-repeat;
+		        background-size: 100% 100%;
+		        width: 100%;
+		        height: 65px;
+		        margin: 0 auto;
+		        max-width: 201px;
+		        text-indent: -9999px;
+        	}
+        	.wrap-action {
+        		max-width: 380px;
+
+        		a {
+        			background: url('../images/landing/btn-send-now.png') no-repeat;
+        			width: 176px;
+        			height: 92px;
+        			float: right;
+        			padding-left: 10px;
+        			color: #ff1919;
+        			font-size: 16px;
+        			text-align: center;
+        			line-height: 72px;
+        			font-weight: bold;
+        			font-family: $font-sfu;
+        			text-transform: uppercase;
+        			&:first-child {
+        				background: url('../images/landing/btn-info-contest.png') no-repeat;
+	        			width: 203px;
+	        			height: 92px;
+	        			float: left;
+	        			line-height: normal;
+	        			padding: 10px 0 0 20px;
+        			}
+        		}
+        	}
+        }
+        .contest_image {
+        	float: right;
+        	width: 50%;
+
+        	.bubble {
+        		background: url('../images/landing/bubble.png') center center no-repeat;
+		        background-size: 100% 100%;
+		        width: 100%;
+		        height: 181px;
+		        max-width: 231px;
+		        padding: 45px 20px;
+		        float: right;
+		        margin: 60px 60px 0 0;
+
+        		p {
+        			margin: 0;
+        			color: #005581;
+        			font-size: 18px;
+        			font-family: $font-sfu;
+        			text-align: center;
+        			line-height: normal;
+        		}
+        	}
+
+        	img {
+        		z-index: 1;
+        		@include ab( n, n, 48px, 0 );
+        		/* width: 100%; */
+        	}
+        }
+    }
+    .grass {
+        background: url('../images/global/grass.png') center center no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 85px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        max-width: $page-width;
+
+    	p {
+    		background: url('../images/landing/intro-event.png') center center no-repeat;
+	        background-size: 100% 100%;
+	        width: 100%;
+	        height: 55px;
+	        max-width: 736px;
+	        text-indent: -9999px;
+	        @include ab( -25px, n, n, 7% );
+    	}
     }
 }

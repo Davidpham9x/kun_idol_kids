@@ -1,0 +1,88 @@
+.page-about-us {
+    .main-content {
+        max-width: 940px;
+        min-height: 630px;
+        z-index: 2;
+        position: relative;
+        margin: 100px auto 50px;
+
+        .heading {
+            background: url('../images/about-us/heading.png') center center no-repeat;
+            background-size: 100% 100%;
+            width: 100%;
+            height: 172px;
+            max-width: 375px;
+            text-indent: -9999px;
+            @include ab( -95px, n, n, 0 );
+        }
+        .content {
+            background-color: #fff;
+            padding: 55px 15%;
+            @include border-radius ( 12px, 12px, 12px, 12px );
+
+            .rte-block {
+                color: #003876;
+                font-size: 14px;
+                height: 470px;
+
+                h4 {
+                    font-family: $font-sfu;
+                    text-transform: uppercase;
+                }
+            }
+            .thumb-img {
+                width: 100%;
+                text-align: center;
+                img {
+                    display: inline-block;
+                }
+            }
+            /* .pos-img {
+                background: url('../images/list-test/img-kid-talent.png') no-repeat;
+                width: 204px;
+                height: 224px;
+                display: block;
+                position: absolute;
+                bottom: -24px;
+                right: -80px;
+            } */
+        }
+    }
+    .grass {
+        background: url('../images/about-us/grass.png') center center no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 323px;
+        max-width: $page-width;
+        @include ab( n, 0, 48px, n );
+
+        .grass--small {
+            background: url('../images/about-us/grass-small.png') no-repeat;
+            width: 596px;
+            height: 77px;
+            @include ab ( n, n, 0, 0 );
+            z-index: 2;
+        }
+        .flower {
+            @include ab ( n, 70px, 0, n );
+            z-index: 2;
+        }
+        .figure {
+            @include ab ( n, n, 30px, 65px );
+            z-index: 2;
+        }
+    }
+}
+
+
+.mCSB_scrollTools .mCSB_draggerRail {
+    background-color: transparent;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #5eb4eb;
+}
+
+.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+    background-color: #5eb4eb;
+}
