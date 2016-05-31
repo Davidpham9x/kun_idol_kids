@@ -27,7 +27,7 @@ var isMobile = {
         init: function() { //initialization code goes here
             $.support.cors = true;
             this.initFormElements();
-            /*this.initModal( '#modal--about-us' );*/
+            /*kunIdolKids.Global.initModalVideo( '#modal--video-detail-2', 'type-2', 'yzRAwrqpxXQ' );*/
         },
 
         initFormElements: function() {
@@ -89,6 +89,36 @@ var isMobile = {
                 },
                 closeOnBgClick: false,
                 enableEscapeKey: false
+            });
+
+            $( id ).find('.btn-close').off('click').on('click', function () {
+                $.magnificPopup.close();
+            });
+        },
+
+        initModalVideo: function ( id, type, idVideo ) {
+            $.magnificPopup.open({
+                items: {
+                    src: id,
+                    type: 'inline'
+                },
+                closeOnBgClick: false,
+                enableEscapeKey: false,
+                callbacks: {
+                    beforeOpen: function () {
+                        $( id ).addClass( type );
+                    },
+                    open: function () {
+                        if ( type == 'type-1' ) {
+                            $( id ).parents('.mfp-content').css('vertical-align', 'bottom');
+                        }
+                        var contentVideo = $('<iframe src="http://www.youtube.com/embed/'+id+'?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>');
+                            contentVideo.clone().appendTo( $( id ).find('.embed-container') );
+                    },
+                    close: function () {
+                        $( id ).find('.embed-container').html('');
+                    }
+                }
             });
 
             $( id ).find('.btn-close').off('click').on('click', function () {

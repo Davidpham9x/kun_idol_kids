@@ -66,3 +66,24 @@
     	@include ab ( 20px, 30px, n, n );
     }
 }
+.button--love {
+    width: 150px;
+    height: 54px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 47px;
+    text-align: center;
+    margin-top: 5px;
+    padding-left: 20px;
+    text-transform: uppercase;
+    background: url('../images/modal/btn-love.png') no-repeat;
+
+
+    .icon {
+        background: url('../images/icons/icon-heart.png') no-repeat;
+        width: 28px;
+        height: 25px;
+        @include ab ( 13px, 12px, n, n );
+    }
+}
