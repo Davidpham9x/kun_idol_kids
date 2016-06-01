@@ -24,9 +24,13 @@ var isMobile = {
 
 (function($) {
     kunIdolKids.Global = {
+        modalSubmitVideo: null,
+
         init: function() { //initialization code goes here
             $.support.cors = true;
             this.initFormElements();
+            this.initModalSubmitVideo();
+            /*kunIdolKids.Global.initModal( '#modal--signup' );*/
             /*kunIdolKids.Global.initModalVideo( '#modal--video-detail-2', 'type-2', 'yzRAwrqpxXQ' );*/
         },
 
@@ -123,6 +127,14 @@ var isMobile = {
 
             $( id ).find('.btn-close').off('click').on('click', function () {
                 $.magnificPopup.close();
+            });
+        },
+
+        initModalSubmitVideo: function () {
+            kunIdolKids.Global.modalSubmitVideo = $('[data-remodal-id=modal]').remodal();
+
+            $('[data-remodal-id=modal]').find('.btn-close').off('click').on('click', function () {
+                kunIdolKids.Global.modalSubmitVideo.close();
             });
         }
     };

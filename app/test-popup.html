@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="/bower_components/magnific-popup/dist/magnific-popup.css" />
     <link rel="stylesheet" href="/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css" />
     <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css" />
+    <link rel="stylesheet" href="/bower_components/remodal/dist/remodal.css" />
+    <link rel="stylesheet" href="/bower_components/remodal/dist/remodal-default-theme.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css styles/main.css -->
@@ -70,7 +72,7 @@
                 <a href="javascript:void(0);" title="Show popup Video Type 2" onClick="kunIdolKids.Global.initModalVideo( '#modal--video-detail-2', 'type-2', 'yzRAwrqpxXQ' );">Show popup Video Type 2</a>
                 <a href="javascript:void(0);" title="Show popup Signup" onClick="kunIdolKids.Global.initModal( '#modal--signup' );">Show popup Signup</a>
                 <a href="javascript:void(0);" title="Show popup Signin" onClick="kunIdolKids.Global.initModal( '#modal--signin' );">Show popup Signin</a>
-                <a href="javascript:void(0);" title="Show popup Submit Video" onClick="kunIdolKids.Global.initModal( '#modal--submit-video' );">Show popup Submit Video</a>
+                <a href="javascript:void(0);" title="Show popup Submit Video" onClick="kunIdolKids.Global.modalSubmitVideo.open();">Show popup Submit Video</a>
             </div>
         </div>
 
@@ -186,7 +188,7 @@
     </div>
 
     <!-- Modal Submit Video -->
-    <div  class="modal mfp-hide modal--submit-video" id="modal--submit-video">
+    <div  class="modal modal--submit-video" id="modal--submit-video" data-remodal-id="modal">
         <a class="btn-close" href="javascript:void(0);" title="Đóng">btn-close</a>
         <h2 class="heading-top">Thần tượng âm nhạ nhí online</h2>
         <div class="inner">
@@ -322,6 +324,7 @@
     <script src="/bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
     <script src="/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
     <script src="/bower_components/jquery-placeholder/jquery.placeholder.js"></script>
+    <script src="/bower_components/remodal/dist/remodal.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js scripts/kun_idol_kids.js -->
