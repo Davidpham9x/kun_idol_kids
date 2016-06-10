@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css" />
     <link rel="stylesheet" href="/bower_components/remodal/dist/remodal.css" />
     <link rel="stylesheet" href="/bower_components/remodal/dist/remodal-default-theme.css" />
+    <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css styles/main.css -->
@@ -72,6 +73,7 @@
                 <a href="javascript:void(0);" title="Show popup Video Type 2" onClick="kunIdolKids.Global.initModalVideo( '#modal--video-detail-2', 'type-2', 'yzRAwrqpxXQ' );">Show popup Video Type 2</a>
                 <a href="javascript:void(0);" title="Show popup Signup" onClick="kunIdolKids.Global.initModal( '#modal--signup' );">Show popup Signup</a>
                 <a href="javascript:void(0);" title="Show popup Signin" onClick="kunIdolKids.Global.initModal( '#modal--signin' );">Show popup Signin</a>
+                <a href="javascript:void(0);" title="Show popup Edit Profile" onClick="kunIdolKids.Global.initModal( '#modal--edit-profile' );">Show popup Edit Profile</a>
                 <a href="javascript:void(0);" title="Show popup Submit Video" onClick="kunIdolKids.Global.modalSubmitVideo.open();">Show popup Submit Video</a>
             </div>
         </div>
@@ -103,14 +105,26 @@
                 </div>
             </div>
             <div class="form_field">
+                <!-- <label for="txt-password">Mật khẩu:</label> -->
+                <div class="input-text input-text-1">
+                    <input type="textbox" name="txt-repassword" id="txt-repassword" class="txt-repassword" placeholder="Nhập lại mật khẩu">
+                </div>
+            </div>
+            <div class="form_field">
                 <!-- <label for="txt-phone-number">Số điện thoại:</label> -->
                 <div class="input-text input-text-1">
                     <input type="textbox" name="txt-phone-number" id="txt-phone-number" class="txt-phone-number" placeholder="0938 173 980">
                 </div>
             </div>
             <!-- <div class="form_action"></div> -->
+            <div class="form_field clearfix">
+                <div class="checkbox-wrapper checkbox-1">
+                    <input type="checkbox" name="checkbox-save-info" id="checkbox-save-info" class="input-checkbox">
+                </div>
+                <label for="checkbox-save-info">Tôi đồng ý với tất cả <a href="" title="điều khoản">điều khoản</a> tham gia chương trình</label>
+            </div>
             <div class="or">
-                Hoặc đăng ký bằng
+                Hoặc đăng ký thông qua
             </div>
             <a href="" title="Đăng ký tài khoản" class="button button--submit">
                 <i class="icon"></i>
@@ -124,7 +138,7 @@
                 </a>
                 <a href="" title="Đăng nhập qua Gmail" class="button button--gmail">
                     <i class="icon"></i>
-                    Đăng nhập <br/>qua Gmail
+                    Đã có <br/>tài khoản
                 </a>
             </div>
             <!-- <div class="row clearfix">
@@ -159,8 +173,15 @@
                     <input type="textbox" name="txt-phone-number" id="txt-phone-number" class="txt-phone-number" placeholder="0938 173 980">
                 </div>
             </div> -->
+            <div class="form_field clearfix">
+                <div class="checkbox-wrapper checkbox-1">
+                    <input type="checkbox" name="checkbox-save-info" id="checkbox-save-info" class="input-checkbox">
+                </div>
+                <label for="checkbox-save-info">Ghi nhớ thông tin tài khoản</label>
+            </div>
             <div class="form_action">
                 <a href="" class="link" title="Quên mật khẩu">Quên mật khẩu</a>
+                /
                 <a href="" class="link" title="Đăng ký">Đăng ký</a>
             </div>
             <!-- <div class="form_action">
@@ -179,11 +200,84 @@
                     <i class="icon"></i>
                     Đăng nhập <br/>qua Facebook
                 </a>
-                <a href="" title="Đăng nhập qua Gmail" class="button button--gmail">
+                <a href="" title="Đăng nhập" class="button button--gmail">
                     <i class="icon"></i>
                     Đăng nhập <br/>qua Gmail
                 </a>
             </div>
+        </div>
+    </div>
+
+    <!-- Modal Edit Profile -->
+    <div  class="modal mfp-hide modal--edit-profile" id="modal--edit-profile">
+        <a class="btn-close" href="javascript:void(0);" title="Đóng">btn-close</a>
+        <h2 class="heading-top">Thần tượng âm nhạ nhí online</h2>
+        <div class="inner">
+            <div class="form_field">
+                <div class="input-text input-text-1">
+                    <input type="textbox" name="txt-email" id="txt-email" class="txt-email" placeholder="hoamuaxuan@gmail.com">
+                </div>
+            </div>
+            <div class="form_field">
+                <div class="input-text input-text-1">
+                    <input type="textbox" name="txt-phone-number" id="txt-phone-number" class="txt-phone-number" placeholder="0938 173 980">
+                </div>
+            </div>
+            <div class="form_field">
+                <div class="input-text input-text-1">
+                    <input type="textbox" name="txt-address" id="txt-address" class="txt-address" placeholder="123 Võ Văn Tần, Q.3, TPHCM">
+                </div>
+            </div>
+            <div class="form_field">
+                <div class="input-text input-text-1">
+                    <input type="textbox" name="txt-password" id="txt-password" class="txt-password" placeholder="*************">
+                </div>
+            </div>
+            <div class="form_field">
+                <div class="input-text input-text-1">
+                    <input type="textbox" name="txt-repassword" id="txt-repassword" class="txt-repassword" placeholder="Nhập lại mật khẩu">
+                </div>
+            </div>
+            <p>Danh sách bài hát đã đuợc upload</p>
+            <div class="wrap-list-song">
+                <ul class="clearfix">
+                    <li>
+                        <div class="wrap-img">
+                            <img src="images/dummy/video-thumbnail.jpg" alt="" />
+                        </div>
+                        <span class="song-name">Con cò bé bé</span>
+                    </li>
+                    <li>
+                        <div class="wrap-img">
+                            <img src="images/dummy/video-thumbnail.jpg" alt="" />
+                        </div>
+                        <span class="song-name">Cháu lên ba</span>
+                    </li>
+                    <li>
+                        <div class="wrap-img">
+                            <img src="images/dummy/video-thumbnail.jpg" alt="" />
+                        </div>
+                        <span class="song-name">Cỏ mây</span>
+                    </li>
+                    <li>
+                        <div class="wrap-img">
+                            <img src="images/dummy/video-thumbnail.jpg" alt="" />
+                        </div>
+                        <span class="song-name">Con cò bé bé</span>
+                    </li>
+                    <li>
+                        <div class="wrap-img">
+                            <img src="images/dummy/video-thumbnail.jpg" alt="" />
+                        </div>
+                        <span class="song-name">Cháu lên ba</span>
+                    </li>
+                </ul>
+            </div>
+            <a href="" title="Đăng ký tài khoản" class="button button--submit">
+                <i class="icon"></i>
+                Cập nhật <br/>tài khoản
+            </a>
+            <img src="images/list-video/boy.png" alt="" class="figure" />
         </div>
     </div>
 
@@ -295,7 +389,9 @@
         <h2 class="heading-top">Thần tượng âm nhạ nhí online</h2>
         <div class="inner">
             <div class="embed-container">
-                <iframe src="http://www.youtube.com/embed/QILiHiTD3uc" frameborder="0" allowfullscreen></iframe>
+                <a href="" class="arrow arrow-prev" title="Prev"></a>
+                    <iframe src="http://www.youtube.com/embed/QILiHiTD3uc" frameborder="0" allowfullscreen></iframe>
+                <a href="" class="arrow arrow-next" title="Next"></a>
             </div>
             <div class="info clearfix">
                 <div class="info_user">
@@ -325,6 +421,7 @@
     <script src="/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
     <script src="/bower_components/jquery-placeholder/jquery.placeholder.js"></script>
     <script src="/bower_components/remodal/dist/remodal.js"></script>
+    <script src="/bower_components/slick-carousel/slick/slick.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js scripts/kun_idol_kids.js -->

@@ -30,6 +30,7 @@ var isMobile = {
             $.support.cors = true;
             this.initFormElements();
             this.initModalSubmitVideo();
+            /*this.initSliderSong();*/
             /*kunIdolKids.Global.initModal( '#modal--signup' );*/
             /*kunIdolKids.Global.initModalVideo( '#modal--video-detail-2', 'type-2', 'yzRAwrqpxXQ' );*/
         },
@@ -92,7 +93,14 @@ var isMobile = {
                     type: 'inline'
                 },
                 closeOnBgClick: false,
-                enableEscapeKey: false
+                enableEscapeKey: false,
+                callbacks: {
+                    open: function () {
+                        if( id === '#modal--edit-profile' ) {
+                            kunIdolKids.Global.initSliderSong();
+                        }
+                    }
+                }
             });
 
             $( id ).find('.btn-close').off('click').on('click', function () {
@@ -116,7 +124,7 @@ var isMobile = {
                         if ( type == 'type-1' ) {
                             $( id ).parents('.mfp-content').css('vertical-align', 'bottom');
                         }
-                        var contentVideo = $('<iframe src="http://www.youtube.com/embed/'+id+'?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>');
+                        var contentVideo = $('<iframe src="//www.youtube.com/embed/'+idVideo+'?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>');
                             contentVideo.clone().appendTo( $( id ).find('.embed-container') );
                     },
                     close: function () {
@@ -131,10 +139,20 @@ var isMobile = {
         },
 
         initModalSubmitVideo: function () {
-            kunIdolKids.Global.modalSubmitVideo = $('[data-remodal-id=modal]').remodal();
+            kunIdolKids.Global.modalSubmitVideo = $('[data-remodal-id=modal]').remodal({
+                hashTracking: false
+            });
 
             $('[data-remodal-id=modal]').find('.btn-close').off('click').on('click', function () {
                 kunIdolKids.Global.modalSubmitVideo.close();
+            });
+        },
+
+        initSliderSong: function () {
+            $('.wrap-list-song > ul').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 3
             });
         }
     };

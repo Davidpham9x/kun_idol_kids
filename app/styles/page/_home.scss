@@ -59,7 +59,7 @@
         		a {
         			background: url('../images/landing/btn-send-now.png') no-repeat;
         			width: 176px;
-        			height: 92px;
+        			height: 83px;
         			float: right;
         			padding-left: 10px;
         			color: #ff1919;
@@ -69,13 +69,20 @@
         			font-weight: bold;
         			font-family: $font-sfu;
         			text-transform: uppercase;
+                    &:hover {
+                        background: url('../images/landing/btn-send-now-hover.png') no-repeat;
+                    }
         			&:first-child {
         				background: url('../images/landing/btn-info-contest.png') no-repeat;
 	        			width: 203px;
-	        			height: 92px;
+	        			height: 82px;
 	        			float: left;
+                        line-height: 62px;
 	        			line-height: normal;
-	        			padding: 10px 0 0 20px;
+	        			padding: 13px 0;
+                        &:hover {
+                            background: url('../images/landing/btn-info-contest-hover.png') no-repeat;
+                        }
         			}
         		}
         	}
