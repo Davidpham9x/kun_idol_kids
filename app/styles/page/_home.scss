@@ -40,9 +40,9 @@
         				text-transform: uppercase;
         			}
         		}
-        		img {
+        		/* img {
         			margin-left: -100px;
-        		}
+        		} */
         	}
         	.prize_text {
         		background: url('../images/landing/prize-text.png') center center no-repeat;
@@ -55,6 +55,7 @@
         	}
         	.wrap-action {
         		max-width: 380px;
+                margin: 0 auto;
 
         		a {
         			background: url('../images/landing/btn-send-now.png') no-repeat;
