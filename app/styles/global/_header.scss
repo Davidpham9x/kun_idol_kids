@@ -5,7 +5,7 @@
 header {
 	background-color: #fff;
 	position: relative;
-	z-index: 2;
+	z-index: 5;
 
 	.container {
 		position: relative;
@@ -32,10 +32,13 @@ header {
 
 		>li {
 			float: left;
-			padding: 20px 15px;
+			padding: 20px 10px;
 			position: relative;
 			&:first-child {
 				padding-left: 0;
+			}
+			&:nth-child(4) {
+				padding: 10px 10px;
 			}
 			&:hover, &.active {
 				>a {
@@ -43,18 +46,26 @@ header {
 				}
 			}
 			&.user-name {
-				padding: 7px 15px;
+				padding: 7px 10px;
+				position: relative;
+				&:after {
+					content: '';
+					background: url('../images/icons/icon-arrow-up.png') no-repeat;
+					width: 13px;
+					height: 12px;
+					@include ab( n, n, 11px, -5px );
+				}
 
 				img {
 					float: left;
 				}
 				>a {
-					float: right;
 					color: #00a69a;
-					margin-left: 10px;
+					text-align: center;
 					font-weight: normal;
 					line-height: normal;
-					background: url('../images/icons/icon-arrow-up.png') 100% 90% no-repeat;
+					float: right;
+					margin-left: 10px;
 
 					strong {
 						display: block;
@@ -63,8 +74,8 @@ header {
 			}
 			&.show-sub-menu {
 				&:hover {
-					>a {
-						background: url('../images/icons/icon-arrow-down.png') 100% 90% no-repeat;
+					&:after {
+						background: url('../images/icons/icon-arrow-down.png') no-repeat;
 					}
 					.sub-menu {
 						display: block;
@@ -77,6 +88,8 @@ header {
 				color: #0093e7;
 				font-size: 15px;
 				font-weight: bold;
+				text-align: center;
+				line-height: normal;
 				text-transform: uppercase;
 			}
 		}
@@ -95,6 +108,9 @@ header {
 			color: #00a69a;
 			padding: 10px 0;
 			font-size: 20px;
+			&:hover {
+				color: lighten(#00a69a, 10%);
+			}
 		}
 	}
 }

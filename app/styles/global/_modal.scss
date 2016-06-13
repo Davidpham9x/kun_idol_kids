@@ -74,6 +74,15 @@
             max-width: 335px;
             text-align: center;
             padding-bottom: 5px;
+            &.form_field--checkbox {
+                padding-bottom: 0;
+
+                label {
+                    line-height: 18px;
+                    position: relative;
+                    top: -4px;
+                }
+            }
 
             label {
                 color: #959595;
@@ -116,8 +125,8 @@
             }
         }
         .or {
-            margin: 0 auto;
-            max-width: 340px;
+            margin: 0 auto 5px;
+            max-width: 335px;
             font-weight: bold;
             text-align: center;
             position: relative;
@@ -127,16 +136,16 @@
             &:before {
                 content: '';
                 height: 1px;
-                width: 100px;
+                width: 65px;
                 background-color: #959595;
-                @include ab ( 8px, -30px, n, n );
+                @include ab ( 8px, 0, n, n );
             }
             &:after {
                 content: '';
                 height: 1px;
-                width: 100px;
+                width: 65px;
                 background-color: #959595;
-                @include ab ( 8px, n, n, -30px );
+                @include ab ( 8px, n, n, 0 );
             }
         }
         /* .row {
@@ -199,6 +208,11 @@
     .inner {
         top: -20px;
 
+        .form_field {
+            &.form_field--checkbox {
+                padding-bottom: 5px;
+            }
+        }
         .form_action {
             max-width: 515px;
             margin: 0 auto;
@@ -214,13 +228,13 @@
         .or {
             margin: 15px auto 0;
             &:before, &:after {
-                width: 85px;
+                width: 65px;
             }
             &:before {
-                left: -15px;
+                left: 0;
             }
             &:after {
-                right: -15px;
+                right: 0;
             }
         }
         .button--submit {
@@ -233,87 +247,18 @@
 .modal--edit-profile {
     background: url('../images/modal/bg-edit-profile.png') center center no-repeat;
     background-size: 100% 100%;
-    max-width: 917px;
-    height: 554px;
+    max-width: 900px;
+    height: 544px;
 
     .inner {
         .form_field {
             padding-bottom: 10px;
         }
-
-        .wrap-list-song {
-            ul {
-                margin: 0;
-                padding: 0;
-                list-style: none;
-                width: 100%;
-                margin: 0 auto;
-                max-width: 500px;
-
-                li {
-                    float: left;
-                    display: block;
-
-                    .wrap-img {
-                        max-width: 130px;
-                        max-height: 130px;
-                        border: 5px solid #0086d0;
-                        margin: 0 auto;
-                        overflow: hidden;
-                        position: relative;
-                        cursor: pointer;
-                        @include border-radius( 50%, 50%, 50%, 50% );
-                        /* &:hover {
-                            .overlay {
-                                display: block;
-                            }
-                        } */
-
-                        img {
-                            width: 100%;
-                        }
-                        .overlay {
-                            width: 100%;
-                            height: 100%;
-                            background-color: rgba( 255, 255, 255, 0.62 );
-                            @include ab( 0, 0, n, n );
-                            text-align: center;
-                            font-size: 15px;
-                            color: #d10015;
-                            padding: 35px;
-                            /* display: none; */
-                        }
-                    }
-                    .song-name {
-                        display: block;
-                        text-align: center;
-                        color: #4a8d47;
-                        font-size: 15px;
-                    }
-                }
-            }
-
-            .slick-arrow {
-                position: absolute;
-                top: 50%;
-                margin-top: -24.5px;
-                width: 48px;
-                height: 49px;
-                display: block;
-                text-indent: -99999px;
-                background: none;
-                border: none;
-                cursor: pointer;
-                padding: 0;
-                &.slick-prev {
-                    background: url('../images/icons/arrow-left.png') no-repeat;
-                    left: -25px;
-                }
-                &.slick-next {
-                    background: url('../images/icons/arrow-right.png') no-repeat;
-                    right: -25px;
-                }
-            }
+        .figure {
+            left: -10%;
+        }
+        .button--submit {
+            right: 30px;
         }
     }
 }
@@ -334,7 +279,7 @@
         @include ab( -30px, 90px, n , n );
     }
     .inner {
-        padding: 100px 125px 0;
+        padding: 100px 310px 0 125px;
 
         .step {
             .content_title {
@@ -347,9 +292,9 @@
                 padding-bottom: 15px;
             }
         }
-        .form {
+        /* .form {
             padding-left: 25px;
-        }
+        } */
         .form_field {
             margin-bottom: 10px;
             &.type-big {
@@ -372,6 +317,11 @@
                     text-align: left;
                     font-family: $font-sfu;
                 }
+            }
+        }
+        .form_action {
+            .button--submit {
+                margin: 0 auto;
             }
         }
         .row {
@@ -447,7 +397,7 @@
         }
         .inner {
             top: -30px;
-            padding: 0 210px 0 260px;
+            padding: 0 280px 0 200px;
         }
         .info {
             color: #003475;

@@ -20,6 +20,8 @@
             margin: 0 auto;
             max-width: 429px;
             text-indent: -9999px;
+            position: relative;
+            z-index: 2;
         }
         .prize {
             width: 100%;
@@ -27,10 +29,13 @@
             background-color: rgba( 255, 255, 255, 0.9 );
             @include border-radius( 12px, 12px, 12px, 12px );
             &.prize-1 {
+                margin-top: -30px;
                 h3 {
                     background: url('../images/winner/heading--prize-1.png') no-repeat;
                     width: 233px;
                     height: 167px;
+                    top: 60px;
+                    left: -40px;
                 }
             }
             &.prize-2 {
@@ -54,26 +59,91 @@
                 padding: 0 200px 0 200px;
             }
             .winner-list {
-                margin: 0;
                 padding: 0;
                 list-style: none;
+                margin: 25px auto 0;
 
                 li {
-                    padding: 15px 0;
-                    overflow: hidden;
-                    border-bottom: 1px solid #76c9e8;
+                    float: left;
+                    display: block;
+                    width: 33.3333%;
+                    text-align: center;
+
+                    .inner {
+                        margin: 0 auto;
+                        &.type-1 {
+                            background: url('../images/winner/bg-winner-1.png') no-repeat;
+                            width: 180px;
+                            height: 179px;
+
+                            .wrap-img {
+                                position: relative;
+                                top: 45px;
+                                left: 5px;
+                            }
+                        }
+                        &.type-2 {
+                            background: url('../images/winner/bg-winner-2.png') no-repeat;
+                            width: 181px;
+                            height: 178px;
+
+                            .wrap-img {
+                                position: relative;
+                                top: 45px;
+                                left: 0;
+                            }
+                        }
+                        &.type-3 {
+                            background: url('../images/winner/bg-winner-3.png') no-repeat;
+                            width: 180px;
+                            height: 178px;
+
+                            .wrap-img {
+                                position: relative;
+                                top: 45px;
+                                left: 5px;
+                            }
+                        }
+
+                        .wrap-img {
+                            max-width: 100px;
+                            max-height: 100px;
+                            border: 5px solid #0086d0;
+                            margin: 0 auto;
+                            overflow: hidden;
+                            position: relative;
+                            cursor: pointer;
+                            @include border-radius( 50%, 50%, 50%, 50% );
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+                        .icon-play {
+                            background: url('../images/winner/icon-play-small.png') no-repeat;
+                            width: 23px;
+                            height: 27px;
+                            margin-top: -13px;
+                            margin-left: -11px;
+                            @include ab( 50%, 50%, n, n );
+                        }
+                    }
 
                     span {
                         display: block;
-                        float: left;
-                        width: 50%;
-                        color: #4e4e4e;
-                        font-size: 13px;
+                        text-align: center;
+                        position: relative;
+                        line-height: normal;
+                        bottom: 30px;
                         &.user-name {
-                            text-transform: uppercase;
+                            color: #ff0000;
+                            font-size: 23px;
+                            font-weight: bold;
+                            font-family: $font-uvn;
                         }
                         &.song-name {
-                            
+                            color: #4a8d47;
+                            font-size: 21px;
                         }
                     }
                 }

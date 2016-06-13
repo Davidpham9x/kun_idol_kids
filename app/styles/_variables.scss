@@ -57,12 +57,12 @@ $grid: 30px;
 	zoom: 1;
 }
 
-@mixin CSSanimate($type, $duration, $ease, $delay) {
-	-moz-transition: $type $duration $ease $delay;
-	-webkit-transition: $type $duration $ease $delay;
-	-ms-transition: $type $duration $ease $delay;
-	-o-transition: $type $duration $ease $delay;
-	transition: $type $duration $ease $delay;
+@mixin CSSanimate($type, $duration, $ease) {
+	-moz-transition: $type $duration $ease;
+	-webkit-transition: $type $duration $ease;
+	-ms-transition: $type $duration $ease;
+	-o-transition: $type $duration $ease;
+	transition: $type $duration $ease;
 }
 
 @mixin CSSkeyframes($name) {

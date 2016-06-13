@@ -40,9 +40,11 @@
         				text-transform: uppercase;
         			}
         		}
-        		/* img {
-        			margin-left: -100px;
-        		} */
+        		img {
+        			width: 100%;
+                    margin: 0 auto;
+                    max-width: 487px;
+        		}
         	}
         	.prize_text {
         		background: url('../images/landing/prize-text.png') center center no-repeat;

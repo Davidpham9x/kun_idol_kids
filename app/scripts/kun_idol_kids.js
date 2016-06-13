@@ -30,7 +30,7 @@ var isMobile = {
             $.support.cors = true;
             this.initFormElements();
             this.initModalSubmitVideo();
-            /*this.initSliderSong();*/
+            this.initSliderWinner();
             /*kunIdolKids.Global.initModal( '#modal--signup' );*/
             /*kunIdolKids.Global.initModalVideo( '#modal--video-detail-2', 'type-2', 'yzRAwrqpxXQ' );*/
         },
@@ -153,6 +153,14 @@ var isMobile = {
                 infinite: true,
                 slidesToShow: 3,
                 slidesToScroll: 3
+            });
+        },
+
+        initSliderWinner: function () {
+            $('.wrap-list-song.type-winner > ul').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1
             });
         }
     };
