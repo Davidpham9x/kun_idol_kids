@@ -3,114 +3,235 @@
 */
 
 header {
-	background-color: #fff;
-	position: relative;
-	z-index: 5;
+    background-color: #fff;
+    position: relative;
+    z-index: 5;
+    height: 50px;
+    @include screen( medium ) {
+    	height: auto;
+    }
+    .container {
+        position: relative;
+    }
+    h1 {
+        background: url('../images/global/logo.png') center center no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        max-width: 144px;
+        height: 123px;
+        margin-left: -50px;
+        max-width: 100px;
+        height: 85px;
+        z-index: 3;
+    	@include ab( 5px, 50%, n, n );
+        @include screen( medium ) {
+        	margin-left: 0;
+        	@include ab( 0, 0, n, n );
+        }
+        @include screen( ipad) {
+            max-width: 120px;
+            height: 103px;
+        }
+        @include screen( large ) {
+            max-width: 144px;
+            height: 123px;
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .toogle-menu{
+    	background: url('../images/global/toggle-menu.png') no-repeat;
+    	width: 30px;
+    	height: 23px;
+    	@include ab( 14px, 10px, n, n );
+    }
+    .logo {
+        text-indent: -99999px;
+        display: block;
+    }
+    .main-nav {
+        width: 100%;
+        background-color: #fff;
+        @include ab( 50px, 0, n, n );
+        display: none;
+        @include screen( medium ) {
+        	padding-left: 15%;
+        	background-color: transparent;
+        	position: relative;
+        	top: 0;
+        	display: block;
+        }
+        >li {
+            position: relative;
+            padding: 15px 10px;
+            @include screen( medium ) {
+	            float: left;
+	            padding: 19px 6px;
+	        }
+            @include screen( ipad ) {
+                padding: 20px 10px;
+            }
+            &:first-child {
+                padding: 15px 10px;
+                @include screen( medium ) {
+                	padding: 20px 10px 0;
+		        }
+            }
+            &:nth-child(4) {
+            	padding: 15px 10px;
+                @include screen( medium ) {
+                	padding: 7px 10px;
+		        }
+            }
+            &:nth-child(5) {
+		        &:before {
+		        	content: '';
+		        	height: 1px;
+		        	width: 94%;
+		        	background-color: #00a69b;
+		        	@include ab( n, 3%, 0, n );
+		        	@include screen( medium ) {
+		        		display: none;
+			        }
+		        }
+            }
+            &:hover {
+            	@include screen( medium ) {
+	                >a {
+	                    color: #ff0019;
+	                }
+            	}
+            }
+            &.active {
+	            background: url('../images/global/menu-home-background.jpg') center center no-repeat;
+	            background-size: 100% 100%;
 
-	.container {
-		position: relative;
-	}
+            	>a {
+                    color: #fff;
+                }
+                @include screen( medium ) {
+                	background: none;
+	                >a {
+	                    color: #ff0019;
+	                }
+            	}
+            }
+            &.user-name {
+                position: relative;
+                @include screen(medium) {
+                	padding: 7px 6px;
+                }
+                @include screen( ipad) {
+                    padding: 7px 10px;
+                }
+                img {
+                    float: left;
+                    display: block;
+                }
+                >a {
+                    color: #00a69a;
+                    font-weight: normal;
+                    line-height: normal;
+                    text-align: left;
+                    margin-left: 10px;
+                    float: left;
+                    display: block;
+                    font-size: 15px;
+                    position: relative;
+                    @include screen(medium) {
+                    	float: right;
+                    	font-size: 12px;
+                    	text-align: center;
+			        }
+			        @include screen( ipad ) {
+	                    font-size: 13px;
+	                }
+	                @include screen( large ) {
+	                    font-size: 15px;
+	                }
+	                &:after {
+	                    content: '';
+	                    background: url('../images/icons/icon-arrow-up.png') no-repeat;
+	                    width: 13px;
+	                    height: 12px;
+	                    @include ab( n, n, 4px, -15px );
+	                }
+	                &.active {
+	                	&:after {
+	                		background: url('../images/icons/icon-arrow-down.png') no-repeat;
+	                	}
+	                }
 
-	h1 {
-		@include ab( 0, 0, n, n );
-	}
-	ul {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
+                    strong {
+                        display: block;
+                    }
+                }
+            }
+            &.show-sub-menu {
+            	@include screen(medium) {
+	                &:hover {
+	                	>a {
+		                    &:after {
+		                        background: url('../images/icons/icon-arrow-down.png') no-repeat;
+		                    }
+	                	}
+	                    .sub-menu {
+	                        display: block;
+	                    }
+	                }
+            	}
+            }
+            >a {
+                display: block;
+                color: #00a69b;
+                font-size: 20px;
+                text-align: left;
+                line-height: normal;
+                @include screen(medium) {
+                	color: #0093e7;
+                	font-size: 12px;
+                	font-weight: bold;
+                	text-align: center;
+                	text-transform: uppercase;
+		        }
+                @include screen( ipad ) {
+                    font-size: 13px;
+                }
+                @include screen( large ) {
+                    font-size: 15px;
+                }
 
-	.logo {
-		width: 143px;
-		height: 123px;
-		display: block;
-		text-indent: -99999px;
-		background: url('../images/global/logo.png') no-repeat;
-	}
-	.main-nav {
-		padding-left: 15%;
-
-		>li {
-			float: left;
-			padding: 20px 10px;
-			position: relative;
-			&:first-child {
-				padding-left: 0;
-			}
-			&:nth-child(4) {
-				padding: 10px 10px;
-			}
-			&:hover, &.active {
-				>a {
-					color: #ff0019;
-				}
-			}
-			&.user-name {
-				padding: 7px 10px;
-				position: relative;
-				&:after {
-					content: '';
-					background: url('../images/icons/icon-arrow-up.png') no-repeat;
-					width: 13px;
-					height: 12px;
-					@include ab( n, n, 11px, -5px );
-				}
-
-				img {
-					float: left;
-				}
-				>a {
-					color: #00a69a;
-					text-align: center;
-					font-weight: normal;
-					line-height: normal;
-					float: right;
-					margin-left: 10px;
-
-					strong {
-						display: block;
-					}
-				}
-			}
-			&.show-sub-menu {
-				&:hover {
-					&:after {
-						background: url('../images/icons/icon-arrow-down.png') no-repeat;
-					}
-					.sub-menu {
-						display: block;
-					}
-				}
-			}
-
-			>a {
-				display: block;
-				color: #0093e7;
-				font-size: 15px;
-				font-weight: bold;
-				text-align: center;
-				line-height: normal;
-				text-transform: uppercase;
-			}
-		}
-	}
-	.sub-menu {
-		width: 100%;
-		background-color: #fff;
-		@include ab( 58px, 0, n, n );
-		display: none;
-
-		li {
-			padding: 0 20px;
-		}
-		a {
-			display: block;
-			color: #00a69a;
-			padding: 10px 0;
-			font-size: 20px;
-			&:hover {
-				color: lighten(#00a69a, 10%);
-			}
-		}
-	}
+                br {
+                	display: none;
+                	@include screen(medium) {
+                		display: block;
+                	}
+                }
+            }
+        }
+    }
+    .sub-menu {
+        width: 100%;
+        background-color: #fff;
+        @include ab( 58px,
+        0,
+        n,
+        n);
+        display: none;
+        li {
+            padding: 0 20px;
+        }
+        a {
+            display: block;
+            color: #00a69a;
+            padding: 10px 0;
+            font-size: 20px;
+            &:hover {
+                color: lighten(#00a69a, 10%);
+            }
+        }
+    }
 }

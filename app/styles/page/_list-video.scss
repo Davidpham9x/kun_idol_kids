@@ -83,6 +83,7 @@
             width: 25%;
             padding: 0 10px;
             cursor: pointer;
+            min-height: 250px;
             &.color-1 {
                 >.inner {
                     background-color: #ff4907;

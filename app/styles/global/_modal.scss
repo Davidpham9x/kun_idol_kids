@@ -9,9 +9,13 @@
         height: 34px;
         display: block;
         position: absolute;
-        top: -18px;
-        right: -20px;
+        top: 0;
+        right: 0;
         text-indent: -100000px;
+        @include screen( medium ) {
+            top: -18px;
+            right: -20px;
+        }
     }
 }
 
@@ -43,6 +47,7 @@
 .modal--signin, .modal--signup, .modal--edit-profile {
     background: url('../images/modal/bg-signin-signup.png') center center no-repeat;
     background-size: 100% 100%;
+    min-width: 480px;
     max-width: 726px;
     height: 436px;
     margin-top: 60px;
@@ -174,28 +179,46 @@
             background: url('../images/modal/btn-signin-signup.png') center center no-repeat;
             background-size: 100% 100%;
             width: 100%;
-            max-width: 217px;
-            height: 122px;
+            max-width: 180px;
+            height: 101px;
             color: #fff;
-            font-size: 16px;
+            font-size: 14px;
             text-align: center;
             line-height: normal;
             font-weight: bold;
             font-family: $font-sfu;
             text-transform: uppercase;
-            padding: 35px 20px 35px 65px;
+            padding: 30px 20px 30px 35px;
             margin-top: 60px;
-            @include ab( 0, n, n, -30px );
+            margin-left: -108px;
+            @include ab( n, 50%, -100px, n );
+            @include screen( medium ) {
+                left: auto;
+                bottom: auto;
+                margin-left: 0;
+                max-width: 217px;
+                height: 122px;
+                font-size: 16px;
+                padding: 35px 20px 35px 65px;
+                @include ab( 0, n, n, -30px );
+            }
             &:hover {
                 background: url('../images/modal/btn-signin-signup-hover.png') center center no-repeat;
                 height: 126px;
             }
 
             .icon {
-                background: url('../images/icons/icon-submit.png') no-repeat;
-                width: 48px;
-                height: 51px;
-                @include ab ( 40px, 20px, n, n );
+                background: url('../images/icons/icon-submit.png') center center no-repeat;
+                background-size: 100% 100%;
+                width: 30px;
+                height: 32px;
+                @include ab ( 40px, 15px, n, n );
+                @include screen( medium ) {
+                    width: 48px;
+                    height: 51px;
+                    top: 40px;
+                    left: 20px;
+                }
             }
         }
     }
@@ -239,7 +262,10 @@
         }
         .button--submit {
             line-height: 54px;
-            margin-top: 10px;
+            margin-top: 0;
+            @include screen( medium ) {
+                margin-top: 10px;
+            }
         }
     }
 }

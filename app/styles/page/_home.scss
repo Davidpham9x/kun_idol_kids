@@ -1,144 +1,194 @@
 .page-home {
-	background: url('../images/landing/background-landing.jpg') center center no-repeat;
+    background: url('../images/landing/background-landing-mobile.jpg') center center no-repeat;
     background-size: 100% 100%;
-
+    @include screen( medium) {
+        background: url('../images/landing/background-landing.jpg') center center no-repeat;
+        background-size: 100% 100%;
+    }
     .main-content {
-    	margin: 0 auto;
-    	max-width: 960px;
-    	min-height: 630px;
-
+        margin: 0 auto;
+        max-width: 960px;
+        min-height: 630px;
+        padding: 0 10px;
+        @include screen( medium) {
+            padding: 0;
+        }
         .contest_info {
-        	z-index: 3;
-        	width: 50%;
-        	float: left;
-        	position: relative;
-
-        	.slogan {
-        		background: url('../images/landing/slogan.png') center center no-repeat;
-		        background-size: 100% 100%;
-		        width: 100%;
-		        height: 188px;
-		        max-width: 415px;
-		        text-indent: -9999px;
-		        margin: 50px 0 0 60px;
-        	}
-        	.prize {
-        		margin: 0 auto;
-        		max-width: 460px;
-        		text-align: center;
-
-        		p {
-        			color: #363636;
-        			font-size: 14px;
-        			font-weight: bold;
-        			line-height: normal;
-        			font-family: $font-sfu;
-
-        			strong {
-        				display: block;
-        				color: #0045ac;
-        				text-transform: uppercase;
-        			}
-        		}
-        		img {
-        			width: 100%;
-                    margin: 0 auto;
-                    max-width: 487px;
-        		}
-        	}
-        	.prize_text {
-        		background: url('../images/landing/prize-text.png') center center no-repeat;
-		        background-size: 100% 100%;
-		        width: 100%;
-		        height: 65px;
-		        margin: 0 auto;
-		        max-width: 201px;
-		        text-indent: -9999px;
-        	}
-        	.wrap-action {
-        		max-width: 380px;
+            z-index: 3;
+            position: relative;
+            @include screen( medium) {
+                width: 50%;
+                float: left;
+            }
+            .slogan {
+                background: url('../images/landing/slogan.png') center center no-repeat;
+                background-size: 100% 100%;
+                width: 100%;
+                height: 145px;
+                max-width: 320px;
+                text-indent: -9999px;
+                margin: 40px auto 0;
+                @include screen( small) {
+                    height: 188px;
+                    max-width: 415px;
+                }
+                @include screen( medium) {
+                    margin: 50px 0 0 60px;
+                }
+            }
+            .prize {
                 margin: 0 auto;
-
-        		a {
-        			background: url('../images/landing/btn-send-now.png') no-repeat;
-        			width: 176px;
-        			height: 83px;
-        			float: right;
-        			padding-left: 10px;
-        			color: #ff1919;
-        			font-size: 16px;
-        			text-align: center;
-        			line-height: 72px;
-        			font-weight: bold;
-        			font-family: $font-sfu;
-        			text-transform: uppercase;
-                    &:hover {
-                        background: url('../images/landing/btn-send-now-hover.png') no-repeat;
+                max-width: 460px;
+                text-align: center;
+                p {
+                    color: #363636;
+                    font-size: 14px;
+                    font-weight: bold;
+                    line-height: normal;
+                    font-family: $font-sfu;
+                    strong {
+                        display: block;
+                        color: #0045ac;
+                        text-transform: uppercase;
                     }
-        			&:first-child {
-        				background: url('../images/landing/btn-info-contest.png') no-repeat;
-	        			width: 203px;
-	        			height: 82px;
-	        			float: left;
-                        line-height: 62px;
-	        			line-height: normal;
-	        			padding: 13px 0;
-                        &:hover {
-                            background: url('../images/landing/btn-info-contest-hover.png') no-repeat;
+                }
+                img {
+                    width: 100%;
+                    margin: 0 auto;
+                    max-width: 908px;
+                }
+            }
+            .prize_text {
+                background: url('../images/landing/prize-text.png') center center no-repeat;
+                background-size: 100% 100%;
+                width: 100%;
+                height: 65px;
+                margin: 0 auto;
+                max-width: 201px;
+                text-indent: -9999px;
+            }
+            .wrap-action {
+                max-width: 320px;
+                margin: 0 auto;
+                @include screen(small) {
+                    max-width: 380px;
+                }
+                a {
+                    background: url('../images/landing/btn-send-now.png') center center no-repeat;
+                    background-size: 100% 100%;
+                    width: 100%;
+                    max-width: 140px;
+                    height: 66px;
+                    float: right;
+                    padding-left: 10px;
+                    color: #ff1919;
+                    font-size: 14px;
+                    text-align: center;
+                    line-height: 60px;
+                    font-weight: bold;
+                    font-family: $font-sfu;
+                    text-transform: uppercase;
+                    @include screen( small ) {
+                        max-width: 176px;
+                        height: 83px;
+                        line-height: 72px;
+                        font-size: 16px;
+                    }
+                    &:hover {
+                        background: url('../images/landing/btn-send-now-hover.png') center center no-repeat;
+                        background-size: 100% 100%;
+                    }
+                    &:first-child {
+                        background: url('../images/landing/btn-info-contest.png') center center no-repeat;
+                        background-size: 100% 100%;
+                        width: 100%;
+                        max-width: 160px;
+                        height: 65px;
+                        float: left;
+                        line-height: normal;
+                        padding: 7px 0;
+                        @include screen( small ) {
+                            max-width: 203px;
+                            height: 82px;
+                            padding: 13px 0;
                         }
-        			}
-        		}
-        	}
+                        &:hover {
+                            background: url('../images/landing/btn-info-contest-hover.png') center center no-repeat;
+                            background-size: 100% 100%;
+                        }
+                    }
+                }
+            }
         }
         .contest_image {
-        	float: right;
-        	width: 50%;
-
-        	.bubble {
-        		background: url('../images/landing/bubble.png') center center no-repeat;
-		        background-size: 100% 100%;
-		        width: 100%;
-		        height: 181px;
-		        max-width: 231px;
-		        padding: 45px 20px;
-		        float: right;
-		        margin: 60px 60px 0 0;
-
-        		p {
-        			margin: 0;
-        			color: #005581;
-        			font-size: 18px;
-        			font-family: $font-sfu;
-        			text-align: center;
-        			line-height: normal;
-        		}
-        	}
-
-        	img {
-        		z-index: 1;
-        		@include ab( n, n, 48px, 0 );
-        		/* width: 100%; */
-        	}
+            bottom: -85px;
+            position: relative;
+            margin: 0 -10px;
+            @include screen( medium) {
+                margin: 0;
+                width: 50%;
+                float: right;
+                bottom: 0;
+                position: inherit;
+            }
+            .bubble {
+                background: url('../images/landing/bubble.png') center center no-repeat;
+                background-size: 100% 100%;
+                width: 100%;
+                height: 181px;
+                max-width: 231px;
+                padding: 45px 20px;
+                float: right;
+                margin: 60px 60px 0 0;
+                p {
+                    margin: 0;
+                    color: #005581;
+                    font-size: 18px;
+                    font-family: $font-sfu;
+                    text-align: center;
+                    line-height: normal;
+                }
+            }
+            img {
+                width: 100%;
+                max-width: 1102px;
+                z-index: 1;
+                @include screen( medium) {
+                    width: 80%;
+                    @include ab( n,
+                    n,
+                    48px,
+                    0);
+                }
+                @include screen( large) {
+                    width: 100%;
+                }
+            }
         }
     }
     .grass {
-        background: url('../images/global/grass.png') center center no-repeat;
-        background-size: 100% 100%;
+        background: url('../images/global/grass.png') no-repeat;
         width: 100%;
         height: 85px;
         margin: 0 auto;
         position: relative;
         z-index: 2;
         max-width: $page-width;
-
-    	p {
-    		background: url('../images/landing/intro-event.png') center center no-repeat;
-	        background-size: 100% 100%;
-	        width: 100%;
-	        height: 55px;
-	        max-width: 736px;
-	        text-indent: -9999px;
-	        @include ab( -25px, n, n, 7% );
-    	}
+        @include screen( big) {
+            background-size: 100% 100%;
+            background-position: center center;
+        }
+        p {
+            background: url('../images/landing/intro-event.png') center center no-repeat;
+            background-size: 100% 100%;
+            width: 100%;
+            height: 55px;
+            max-width: 736px;
+            text-indent: -9999px;
+            @include ab( -25px,
+            n,
+            n,
+            7%);
+        }
     }
 }
