@@ -44,11 +44,20 @@
 	background: url('../images/modal/btn-facebook.png') center center no-repeat;
     background-size: 100% 100%;
     width: 100%;
-    max-width: 253px;
-    height: 92px;
-    padding: 22px 20px 22px 65px;
+    height: 52px;
+    padding: 5px 10px;
+    max-width: 150px;
     &:hover {
         background: url('../images/modal/btn-facebook-hover.png') center center no-repeat;
+    }
+    @include screen(small) {
+        height: 70px;
+        max-width: 200px;
+    }
+    @include screen(medium) {
+        max-width: 253px;
+        height: 92px;
+        padding: 22px 20px 22px 65px;
     }
 
     .icon {
@@ -62,11 +71,20 @@
 	background: url('../images/modal/btn-google.png') center center no-repeat;
     background-size: 100% 100%;
     width: 100%;
-    max-width: 234px;
-    height: 93px;
-    padding: 22px 20px 22px 65px;
+    height: 58px;
+    padding: 5px 10px;
+    max-width: 150px;
     &:hover {
         background: url('../images/modal/btn-google-hover.png') center center no-repeat;
+    }
+    @include screen(small) {
+        height: 70px;
+        max-width: 200px;
+    }
+    @include screen(medium) {
+        height: 93px;
+        max-width: 234px;
+        padding: 22px 20px 22px 65px;
     }
 
     .icon {

@@ -8,51 +8,94 @@
         max-width: 940px;
         min-height: 630px;
         z-index: 2;
-        margin:  0 auto;
+        margin: 0 auto;
         position: relative;
-        padding-bottom: 115px;
+        padding: 0 10px 115px;
+        @include screen( large ) {
+            padding: 0 0 115px;
+        }
 
         .heading {
             background: url('../images/winner/heading.png') center center no-repeat;
             background-size: 100% 100%;
             width: 100%;
-            height: 163px;
-            margin: 0 auto;
-            max-width: 429px;
+            height: 114px;
+            margin: 40px auto;
+            max-width: 300px;
             text-indent: -9999px;
             position: relative;
             z-index: 2;
+            @include screen( medium ) {
+                height: 163px;
+                margin: 0 auto;
+                max-width: 429px;
+            }
         }
         .prize {
             width: 100%;
-            padding: 20px 25px;
+            padding: 10px 5px;
+            position: relative;
             background-color: rgba( 255, 255, 255, 0.9 );
             @include border-radius( 12px, 12px, 12px, 12px );
+            @include screen( small ) {
+                padding: 10px 15px;
+            }
+            @include screen( large ) {
+                padding: 20px 25px;
+            }
             &.prize-1 {
                 margin-top: -30px;
                 h3 {
-                    background: url('../images/winner/heading--prize-1.png') no-repeat;
-                    width: 233px;
+                    background: url('../images/winner/heading--prize-1.png') center center no-repeat;
+                    background-size: 100% 100%;
+                    width: 100%;
                     height: 167px;
-                    top: 60px;
-                    left: -40px;
+                    margin: 0 auto;
+                    max-width: 233px;
+                    @include screen( medium ) {
+                        top: -25px;
+                        left: -10px;
+                        height: 129px;
+                        max-width: 180px;
+                    }
+                    @include screen( large ) {
+                        top: -55px;
+                        left: -100px;
+                        height: 167px;
+                        max-width: 233px;
+                    }
                 }
             }
             &.prize-2 {
                 margin-top: 25px;
 
                 h3 {
-                    background: url('../images/winner/heading--prize-2.png') no-repeat;
-                    width: 154px;
+                    background: url('../images/winner/heading--prize-2.png') center center no-repeat;
+                    background-size: 100% 100%;
+                    width: 100%;
                     height: 116px;
-                    left: 75px;
+                    max-width: 154px;
+                    margin: 0 auto;
+                    @include screen( medium ) {
+                        height: 94px;
+                        max-width: 125px;
+                        left: 15px;
+                    }
+                    @include screen( large ) {
+                        top: 0;
+                        left: 75px;
+                        height: 116px;
+                        max-width: 154px;
+                    }
                 }
             }
 
             h3 {
-                text-indent: -9999px;
                 display: block;
-                position: absolute;
+                text-indent: -9999px;
+                @include screen( medium ) {
+                    position: absolute;
+                }
             }
             .wrap-winner-list {
                 height: 250px;
@@ -60,8 +103,11 @@
             }
             .winner-list {
                 padding: 0;
+                margin: 0 auto;
                 list-style: none;
-                margin: 25px auto 0;
+                @include screen( medium ) {
+                    margin: 25px auto 0;
+                }
 
                 li {
                     float: left;
@@ -72,9 +118,11 @@
                     .inner {
                         margin: 0 auto;
                         &.type-1 {
-                            background: url('../images/winner/bg-winner-1.png') no-repeat;
-                            width: 180px;
+                            background: url('../images/winner/bg-winner-1.png') center center no-repeat;
+                            background-size: 100% 100%;
+                            width: 100%;
                             height: 179px;
+                            max-width: 180px;
 
                             .wrap-img {
                                 position: relative;
@@ -83,9 +131,11 @@
                             }
                         }
                         &.type-2 {
-                            background: url('../images/winner/bg-winner-2.png') no-repeat;
-                            width: 181px;
+                            background: url('../images/winner/bg-winner-2.png') center center no-repeat;
+                            background-size: 100% 100%;
+                            width: 100%;
                             height: 178px;
+                            max-width: 181px;
 
                             .wrap-img {
                                 position: relative;
@@ -94,9 +144,11 @@
                             }
                         }
                         &.type-3 {
-                            background: url('../images/winner/bg-winner-3.png') no-repeat;
-                            width: 180px;
+                            background: url('../images/winner/bg-winner-3.png') center center no-repeat;
+                            background-size: 100% 100%;
+                            width: 100%;
                             height: 178px;
+                            max-width: 180px;
 
                             .wrap-img {
                                 position: relative;
@@ -158,17 +210,27 @@
         max-width: $page-width;
         z-index: 2;
         @include ab( n, 0, 48px, n );
-
     }
     .kid {
         position: absolute;
         bottom: 0;
         z-index: 1;
+        width: 100%;
         &.kid-1 {
-            left: -15%;
+            left: 0%;
+            max-width: 200px;
+            @include screen( large ) {
+                left: -15%;
+                max-width: 282px;
+            }
         }
         &.kid-2 {
-            right: -15%;
+            right: 0%;
+            max-width: 180px;
+            @include screen( large ) {
+                right: -15%;
+                max-width: 234px;
+            }
         }
     }
 }

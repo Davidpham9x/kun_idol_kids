@@ -9,8 +9,9 @@
         height: 34px;
         display: block;
         position: absolute;
-        top: 0;
+        top: -40px;
         right: 0;
+        z-index: 5;
         text-indent: -100000px;
         @include screen( medium ) {
             top: -18px;
@@ -19,7 +20,7 @@
     }
 }
 
-.modal--about-us {
+/* .modal--about-us {
     .title {
         text-align: center;
         text-transform: uppercase;
@@ -42,30 +43,58 @@
         bottom: -15px;
         right: -68px;
     }
-}
+} */
 
 .modal--signin, .modal--signup, .modal--edit-profile {
-    background: url('../images/modal/bg-signin-signup.png') center center no-repeat;
+    background: url('../images/modal/bg-signin-signup-mobile.png') center center no-repeat;
     background-size: 100% 100%;
-    min-width: 480px;
-    max-width: 726px;
-    height: 436px;
+    width: 100%;
     margin-top: 60px;
+    padding: 0 10px;
+    @include screen(small) {
+        height: 511px;
+        max-width: 640px;
+    }
+    @include screen(medium) {
+        background: url('../images/modal/bg-signin-signup.png') center center no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        padding: 0;
+        height: 436px;
+        max-width: 726px;
+    }
 
     .heading-top {
         background: url('../images/modal/heading-signin-signup.png') center center no-repeat;
         background-size: 100% 100%;
         width: 100%;
-        max-width: 447px;
-        height: 158px;
+        height: 114px;
+        max-width: 300px;
         margin: 0 auto;
         position: relative;
-        top: -60px;
+        top: -30px;
         text-indent: -99999px;
+        @include screen(small) {
+            height: 171px;
+            max-width: 450px;
+            top: -60px;
+        }
+        @include screen(medium) {
+            height: 199px;
+            max-width: 524px;
+            top: -90px;
+        }
     }
     .inner {
-        top: -50px;
+        top: -10px;
         position: relative;
+        @include screen(small) {
+            top: -50px;
+        }
+        @include screen(medium) {
+            padding-right: 10px;
+            top: -90px;
+        }
 
         p {
             color: #000;
@@ -114,6 +143,9 @@
                 &:first-child {
                     float: left;
                 }
+                @include screen(medium) {
+                    font-size: 12px;
+                }
             }
             .link {
                 color: #040404;
@@ -141,16 +173,22 @@
             &:before {
                 content: '';
                 height: 1px;
-                width: 65px;
+                width: 45px;
                 background-color: #959595;
                 @include ab ( 8px, 0, n, n );
+                @include screen( medium ) {
+                    width: 65px;
+                }
             }
             &:after {
                 content: '';
                 height: 1px;
-                width: 65px;
+                width: 45px;
                 background-color: #959595;
                 @include ab ( 8px, n, n, 0 );
+                @include screen( medium ) {
+                    width: 65px;
+                }
             }
         }
         /* .row {
@@ -190,7 +228,7 @@
             text-transform: uppercase;
             padding: 30px 20px 30px 35px;
             margin-top: 60px;
-            margin-left: -108px;
+            margin-left: -90px;
             @include ab( n, 50%, -100px, n );
             @include screen( medium ) {
                 left: auto;
@@ -200,7 +238,7 @@
                 height: 122px;
                 font-size: 16px;
                 padding: 35px 20px 35px 65px;
-                @include ab( 0, n, n, -30px );
+                @include ab( 0, n, n, -20px );
             }
             &:hover {
                 background: url('../images/modal/btn-signin-signup-hover.png') center center no-repeat;
@@ -271,10 +309,21 @@
 }
 
 .modal--edit-profile {
-    background: url('../images/modal/bg-edit-profile.png') center center no-repeat;
+    background: url('../images/modal/bg-edit-profile-mobile.png') center center no-repeat;
     background-size: 100% 100%;
-    max-width: 900px;
-    height: 544px;
+    width: 100%;
+    padding: 0 10px;
+    @include screen(small) {
+        height: 708px;
+        max-width: 640px;
+    }
+    @include screen(medium) {
+        background: url('../images/modal/bg-edit-profile.png') center center no-repeat;
+        background-size: 100% 100%;
+        max-width: 900px;
+        height: 544px;
+        padding: 0;
+    }
 
     .inner {
         .form_field {
@@ -284,7 +333,17 @@
             left: -10%;
         }
         .button--submit {
-            right: 30px;
+            @include screen(medium) {
+                right: 30px;
+            }
+        }
+    }
+    .btn-close {
+        top: -40px;
+        right: 0;
+        @include screen( medium ) {
+            top: -20px;
+            right: 0;
         }
     }
 }
@@ -577,4 +636,11 @@
 
 .remodal-wrapper {
     z-index: 1041;
+}
+
+.mfp-container {
+    padding: 0;
+    @include screen(medium) {
+        padding: 0 6px;
+    }
 }

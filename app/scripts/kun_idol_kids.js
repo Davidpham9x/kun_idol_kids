@@ -154,7 +154,21 @@ var isMobile = {
             $('.wrap-list-song > ul').slick({
                 infinite: true,
                 slidesToShow: 3,
-                slidesToScroll: 3
+                slidesToScroll: 3,
+                responsive: [{
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 640,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                }]
             });
         },
 
