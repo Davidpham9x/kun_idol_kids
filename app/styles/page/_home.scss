@@ -16,9 +16,13 @@
         .contest_info {
             z-index: 3;
             position: relative;
-            @include screen( medium) {
-                width: 50%;
+            @include screen( medium ) {
+                width: 51%;
                 float: left;
+                padding-left: 10px
+            }
+            @include screen( ipad ) {
+                padding-left: 0;
             }
             .slogan {
                 background: url('../images/landing/slogan.png') center center no-repeat;
@@ -174,21 +178,30 @@
         position: relative;
         z-index: 2;
         max-width: $page-width;
-        @include screen( big) {
+        @include screen( big ) {
             background-size: 100% 100%;
             background-position: center center;
         }
         p {
             background: url('../images/landing/intro-event.png') center center no-repeat;
             background-size: 100% 100%;
-            width: 100%;
-            height: 55px;
-            max-width: 736px;
             text-indent: -9999px;
-            @include ab( -25px,
-            n,
-            n,
-            7%);
+            width: 100%;
+            @include screen( medium ) {
+                height: 30px;
+                max-width: 400px;
+                @include ab( 20px, n, n, 7% );
+            }
+            @include screen( ipad ) {
+                height: 45px;
+                max-width: 600px;
+                @include ab( -10px, n, n, 8% );
+            }
+            @include screen( large ) {
+                height: 55px;
+                max-width: 736px;
+                @include ab( -25px, n, n, 7% );
+            }
         }
     }
 }

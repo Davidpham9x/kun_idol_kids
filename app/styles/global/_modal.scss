@@ -20,36 +20,11 @@
     }
 }
 
-/* .modal--about-us {
-    .title {
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 30px;
-        margin-bottom: 20px;
-    }
-    h3 {
-        text-transform: uppercase;
-    }
-    ul {
-        list-style: none;
-        margin-top: 30px;
-    }
-    .pos-img {
-        background: url('../images/list-test/img-kid-talent-small.png') no-repeat;
-        width: 144px;
-        height: 158px;
-        display: block;
-        position: absolute;
-        bottom: -15px;
-        right: -68px;
-    }
-} */
-
 .modal--signin, .modal--signup, .modal--edit-profile {
     background: url('../images/modal/bg-signin-signup-mobile.png') center center no-repeat;
     background-size: 100% 100%;
     width: 100%;
-    margin-top: 60px;
+    margin-top: 100px;
     padding: 0 10px;
     @include screen(small) {
         height: 511px;
@@ -499,22 +474,50 @@
 
 .modal--video-detail {
     &.type-1 {
-        background: url('../images/modal/bg-details-1.png') center center no-repeat;
+        background: url('../images/modal/bg-details-1-mobile.png') center center no-repeat;
         background-size: 100% 100%;
-        max-width: 720px;
-        height: 558px;
+        width: 100%;
+        max-width: 480px;
+        height: 452px;
+        @include screen ( small ) {
+            background: url('../images/modal/bg-details-1.png') center center no-repeat;
+            background-size: 100% 100%;
+            max-width: 720px;
+            height: 558px;
+        }
 
         .figure {
             bottom: 0;
-            left: -20%;
+            left: -5%;
             position: absolute;
+            width: 100%;
+            max-width: 150px;
+            display: none;
+            @include screen ( small ) {
+                display: block;
+            }
+            @include screen ( medium ) {
+                left: -10%;
+                max-width: 200px;
+            }
+            @include screen ( large ) {
+                left: -20%;
+                max-width: 250px;
+            }
         }
     }
     &.type-2 {
-        background: url('../images/modal/bg-details-2.png') center center no-repeat;
+        background: url('../images/modal/bg-details-2-mobile.png') center center no-repeat;
         background-size: 100% 100%;
-        max-width: 720px;
-        height: 548px;
+        width: 100%;
+        max-width: 480px;
+        height: 436px;
+        @include screen ( small ) {
+            background: url('../images/modal/bg-details-2.png') center center no-repeat;
+            background-size: 100% 100%;
+            max-width: 720px;
+            height: 548px;
+        }
 
         .heading-top {
             margin: 0 auto;
@@ -525,7 +528,10 @@
         }
         .inner {
             top: -30px;
-            padding: 0 80px;
+            padding: 0 35px;
+            @include screen ( small ) {
+                padding: 0 80px;
+            }
         }
         .info {
             color: #003475;
@@ -534,7 +540,9 @@
         }
         .info_social {
             .button--facebook--small {
-                right: 15px;
+                @include screen ( medium ) {
+                    right: 15px;
+                }
             }
         }
         .figure {
@@ -546,13 +554,22 @@
             &.figure-2 {
                 right: -30%;
             }
+            &.figure-3 {
+                width: 100%;
+                max-width: 70px;
+                right: 0;
+                bottom: 20%;
+                @include screen ( xs ) {
+                    bottom: 10%;
+                }
+                @include screen ( small ) {
+                    bottom: 0;
+                    max-width: 150px;
+                }
+            }
         }
     }
 
-    .btn-close {
-        top: 5%;
-        right: 0;
-    }
     .heading-top {
         background: url('../images/modal/heading-detail.png') center center no-repeat;
         background-size: 100% 100%;
@@ -570,7 +587,10 @@
     .inner {
         top: -40px;
         position: relative;
-        padding: 0 65px 0 90px;
+        padding: 0 35px 0 35px;
+        @include screen ( small ) {
+            padding: 0 65px 0 90px;
+        }
 
         .arrow {
             width: 25px;
@@ -581,11 +601,29 @@
             margin-top: -23px;
             &.arrow-prev {
                 background: url('../images/icons/icon-prev.png') center center no-repeat;
-                left: -8%;
+                left: -12%;
+                @include screen ( xs ) {
+                    left: -10%;
+                }
+                @include screen ( small ) {
+                    left: -9%;
+                }
+                @include screen ( medium ) {
+                    left: -8%;
+                }
             }
             &.arrow-next {
                 background: url('../images/icons/icon-next.png') center center no-repeat;
-                right: -8%;
+                right: -12%;
+                @include screen ( xs ) {
+                    right: -10%;
+                }
+                @include screen ( small ) {
+                    right: -9%;
+                }
+                @include screen ( medium ) {
+                    right: -8%;
+                }
             }
         }
     }
@@ -649,6 +687,7 @@
         .social {
             margin: 0;
             position: relative;
+            text-align: center;
         }
         .button--facebook--small {
             background: url('../images/icons/icon-facebook.png') no-repeat;
@@ -656,7 +695,10 @@
             height: 21px;
             text-decoration: none;
             text-indent: -9999px;
-            @include ab( 5px, n, n, 0 );
+            display: inline-block;
+            @include screen ( medium ) {
+                @include ab( 20px, n, n, 0 );
+            }
         }
     }
 }
