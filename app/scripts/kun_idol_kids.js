@@ -33,6 +33,7 @@ var isMobile = {
             this.initSliderWinner();
             this.initToggleMenu();
             this.initToggleSubMenu();
+            this.initTrackResize();
             /*kunIdolKids.Global.initModal( '#modal--signup' );*/
             /*kunIdolKids.Global.initModalVideo( '#modal--video-detail-2', 'type-2', 'yzRAwrqpxXQ' );*/
         },
@@ -180,6 +181,21 @@ var isMobile = {
             });
         },
 
+        initSliderWinnerBest: function () {
+            $('.winner-list').slick({
+                infinite: true,
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                responsive: [{
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }]
+            });
+        },
+
         initToggleMenu: function () {
             var aTag = $('.toogle-menu'),
                 menuContent = $('.main-nav');
@@ -208,6 +224,21 @@ var isMobile = {
                     aTag.find('a').removeClass('active');
                 }
             });
+        },
+
+        initTrackResize: function () {
+            $( window ).resize(function() {
+                window.width = $(window).width();
+                if ( window.width <= 640 ) {
+                    if ( !$('.winner-list').hasClass('slick-initialized') ) {
+                        kunIdolKids.Global.initSliderWinnerBest();
+                    }
+                } else {
+                    if ( $('.winner-list').hasClass('slick-initialized') ) {
+                        $('.winner-list').slick('unslick');
+                    }
+                }
+            }).trigger('resize');
         }
     };
 })(jQuery);

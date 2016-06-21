@@ -349,10 +349,20 @@
 }
 
 .modal--submit-video {
-    background: url('../images/modal/bg-submit-video.png') center center no-repeat;
+    background: url('../images/modal/bg-submit-video-mobile.png') center center no-repeat;
     background-size: 100% 100%;
-    max-width: 800px;
-    height: 577px;
+    height: 632px;
+    max-width: 640px;
+    margin-top: 50px;
+    @include screen( small ) {
+        background: url('../images/modal/bg-submit-video.png') center center no-repeat;
+        background-size: 100% 100%;
+        max-width: 800px;
+        height: 577px;
+    }
+    @include screen( medium ) {
+        margin-top: 20px;
+    }
 
     .heading-top {
         background: url('../images/modal/heading-detail.png') center center no-repeat;
@@ -361,20 +371,36 @@
         max-width: 308px;
         height: 122px;
         text-indent: -9999px;
-        @include ab( -30px, 90px, n , n );
+        margin: -50px auto 0;
+        @include screen( small ) {
+            margin: 0 auto;
+            @include ab( -30px, 90px, n , n );
+        }
     }
     .inner {
-        padding: 100px 310px 0 125px;
+        padding: 25px 10px 0 50px;
+        @include screen( small ) {
+            padding: 100px 50px 0 95px;
+        }
+        @include screen( medium ) {
+            padding: 100px 310px 0 125px;
+        }
 
         .step {
             .content_title {
                 color: #003876;
-                font-size: 18px;
+                font-size: 14px;
                 font-weight: bold;
                 font-family: $font-uvn;
                 text-align: left;
                 text-transform: uppercase;
                 padding-bottom: 15px;
+                @include screen( small ) {
+                    font-size: 16px;
+                }
+                @include screen( medium ) {
+                    font-size: 18px;
+                }
             }
         }
         /* .form {
@@ -412,11 +438,15 @@
         .row {
             max-width: 360px;
             .form_field {
-                float: right;
-                width: 35%;
+                @include screen ( medium ) {
+                    float: right;
+                    width: 35%;
+                }
                 &:first-child {
-                    float: left;
-                    width: 62%;
+                    @include screen ( medium ) {
+                        float: left;
+                        width: 62%;
+                    }
                 }
             }
             .noted {
@@ -450,6 +480,14 @@
             @include ab ( 40px, n, n, 0 );
         }
     }
+    .btn-close {
+        top: -40px;
+        right: 0;
+        @include screen( medium ) {
+            top: -20px;
+            right: 0;
+        }
+    }
 }
 
 .modal_title {
@@ -460,6 +498,10 @@
 }
 
 .modal--video-detail {
+    margin-top: 80px;
+    /* @include screen( medium ) {
+        margin-top: 20px;
+    } */
     &.type-1 {
         background: url('../images/modal/bg-details-1.png') center center no-repeat;
         background-size: 100% 100%;
@@ -477,8 +519,11 @@
             right: 10%;
         }
         .heading-top {
-            top: -30px;
-            margin-left: 100px;
+            margin: -30px auto 0;
+            @include screen( medium ) {
+                top: -30px;
+                margin-left: 100px;
+            }
         }
         .inner {
             top: -30px;
@@ -507,9 +552,12 @@
         max-width: 308px;
         height: 122px;
         text-indent: -9999px;
-        margin-left: 300px;
-        position: relative;
-        top: -40px;
+        margin: -40px auto 0;
+        @include screen( medium ) {
+            margin-left: 300px;
+            position: relative;
+            top: -40px;
+        }
     }
     .inner {
         padding: 0 75px 0 275px;
@@ -543,9 +591,11 @@
         text-align: center;
         line-height: normal;
         display: block;
-        float: left;
-        width: 40%;
         text-transform: uppercase;
+        @include screen ( medium ) {
+            width: 40%;
+            float: left;
+        }
 
         .username {
             display: block;
@@ -557,11 +607,13 @@
         text-align: center;
         line-height: normal;
         display: block;
-        float: left;
-        width: 22%;
         text-transform: uppercase;
-        border-left: 1px solid #003876;
-        border-right: 1px solid #003876;
+        @include screen ( medium ) {
+            width: 22%;
+            float: left;
+            border-left: 1px solid #003876;
+            border-right: 1px solid #003876;
+        }
 
         .title {
             font-size: 16px;
@@ -573,10 +625,12 @@
         }
     }
     .info_social {
-        width: 38%;
-        float: right;
         display: block;
         padding-left: 10px;
+        @include screen ( medium ) {
+            width: 38%;
+            float: right;
+        }
 
         .title {
             font-size: 14px;
@@ -642,5 +696,12 @@
     padding: 0;
     @include screen(medium) {
         padding: 0 6px;
+    }
+}
+
+.remodal-wrapper {
+    padding: 0;
+    @include screen(medium) {
+        padding: 10px 10px 0;
     }
 }

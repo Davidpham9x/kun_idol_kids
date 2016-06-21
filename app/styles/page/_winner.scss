@@ -45,6 +45,7 @@
             }
             &.prize-1 {
                 margin-top: -30px;
+
                 h3 {
                     background: url('../images/winner/heading--prize-1.png') center center no-repeat;
                     background-size: 100% 100%;
@@ -63,6 +64,18 @@
                         left: -100px;
                         height: 167px;
                         max-width: 233px;
+                    }
+                }
+                .slick-arrow {
+                    &.slick-prev {
+                        @include screen( small ) {
+                            left: -15px;
+                        }
+                    }
+                    &.slick-next {
+                        @include screen( small ) {
+                            right: -15px;
+                        }
                     }
                 }
             }
