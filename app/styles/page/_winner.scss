@@ -178,6 +178,7 @@
                             overflow: hidden;
                             position: relative;
                             cursor: pointer;
+                            display: block;
                             @include border-radius( 50%, 50%, 50%, 50% );
 
                             img {
@@ -205,10 +206,23 @@
                             font-size: 23px;
                             font-weight: bold;
                             font-family: $font-uvn;
+
+                            img {
+                                max-width: 275px;
+                            }
                         }
                         &.song-name {
                             color: #4a8d47;
                             font-size: 21px;
+
+                            img {
+                                max-width: 200px;
+                            }
+                        }
+
+                        img {
+                            width: 100%;
+                            margin: 0 auto;
                         }
                     }
                 }
